@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ecjs.sistemareclamov2.bo.Reclamo;
-import com.ecjs.sistemareclamov2.repository.EstadosReclamoRepository;
 import com.ecjs.sistemareclamov2.repository.ReclamosRepository;
 
 
@@ -22,9 +21,11 @@ public class ReclamosServiceImpl implements ReclamosService{
 	@Autowired
 	private ReclamosRepository reclamosRepository;
 	
+	
+	/**
 	@Autowired
 	private EstadosReclamoRepository estadosReclamoRepository;
-	
+	*/
 
 	@Override
 	public void borrarReclamo(Long id) {

@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>Listado de Reclamos</title>
 	<script type="text/javascript" src="../js/bootstrap.js"></script>
 	<link href="../css/bootstrap.css" rel="stylesheet" />
 	
@@ -15,25 +15,29 @@
 <body>
 
 		<jsp:include page="../template_superior.jsp"></jsp:include>
-
-		<h1>${titulo}</h1>
+	<div class="py-4">
+		<h3 class="text-center">${titulo}</h3>
+	</div>
+		
 	
 	
-		<table class="table table-bordered">
+		<table class="table table-bordered border-primary">
+		
 			<tr>
-				<th>Id</th>
-				<th>Titulo</th>
-				<th>Fecha alta</th>
-				<th>Estado</th>
-				<th></th>
+				<th class="text-center">Id</th>
+				<th class="text-center">Titulo</th>
+				<th class="text-center">Fecha alta</th>
+				<th class="text-center">Estado</th>
+				<th class="text-center">Botonera</th>
 			</tr>
+			
 			<c:forEach items="${reclamos}" var="reclamo">
 			<tr>
-				<td>${reclamo.id}</td>
+				<td class="text-center">${reclamo.id}</td>
 				<td>${reclamo.titulo}</td>
 				<td>${reclamo.fechaDeAlta}</td>
 				<td>${reclamo.estadoReclamo.nombre}</td>
-				<td>
+				<td class="d-flex justify-content-center">
 					<a class="btn btn-primary" href="/reclamos/ver/${reclamo.id}">Ver</a>
 					&nbsp;
 					<a class="btn btn-info" href="/reclamos/editar/${reclamo.id}">Editar</a>
